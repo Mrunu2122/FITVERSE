@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Cormorant_Garamond, JetBrains_Mono } from "next/font/google";
 import { BRAND_CONFIG } from "@/lib/constants";
 import { ViewportProvider } from "@/store/viewport-context";
+import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -48,7 +49,9 @@ export default function RootLayout({
       className={`dark ${plusJakarta.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen overflow-x-hidden bg-obsidian font-sans text-silver antialiased">
-        <ViewportProvider>{children}</ViewportProvider>
+        <SmoothScrollProvider>
+          <ViewportProvider>{children}</ViewportProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

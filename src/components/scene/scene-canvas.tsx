@@ -47,12 +47,13 @@ export function SceneCanvas({
     >
       <Canvas
         shadows
-        dpr={[1, 2]}
+        dpr={[1, 1.5]}
         gl={{
           antialias: true,
           alpha: true,
           powerPreference: "high-performance",
-          preserveDrawingBuffer: true,
+          stencil: false,
+          depth: true,
         }}
         camera={{
           position: resolvedCamera.position,

@@ -33,8 +33,8 @@ export function FabricCurtainMesh() {
   const CLOTH_H = 4.6;
 
   const { geometry, basePositions } = useMemo(() => {
-    const segX = isCompact ? 90 : 170;
-    const segY = isCompact ? 60 : 110;
+    const segX = isCompact ? 50 : 80;
+    const segY = isCompact ? 35 : 55;
     const geo = new THREE.PlaneGeometry(CLOTH_W, CLOTH_H, segX, segY);
     const posAttr = geo.attributes.position as THREE.BufferAttribute;
     const copy = new Float32Array(posAttr.array.length);
