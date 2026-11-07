@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-charcoal-border;
+  }
+
+  html,
+  body {
+    @apply min-h-screen bg-obsidian text-silver antialiased selection:bg-violet/25 selection:text-silver-bright;
+  }
+}
+
+@keyframes subtlePulseGlow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+.animate-ambient-glow {
+  animation: subtlePulseGlow 7s ease-in-out infinite;
+}
